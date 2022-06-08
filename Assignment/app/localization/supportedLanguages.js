@@ -8,8 +8,7 @@ const en = {
     enter_valid_user_name: "Please enter valid username",
     enter_user_password: "Please enter password",
     enter_valid_user_password: "Please enter valid password",
-    register: 'Register',
-
+    
     //MPIN Configure Screen
     enter_mpin:'Enter MPIN',
     enter_confirm_mpin: 'Enter Confirm MPIN',
@@ -35,13 +34,36 @@ const en = {
 };
 
 const es = {
-    username: "Nom d'utilisateur",
-    password: "Mot de passe",
-    register:"S'inscrire",
-    enter_user_name: "Veuillez entrer le nom d'utilisateur",
-    enter_valid_user_name: "Veuillez entrer un nom d'utilisateur valide",
-    enter_user_password: "Veuillez entrer le mot de passe",
-    enter_valid_user_password: "Veuillez entrer un mot de passe valide"
+    //Register Screen
+    username: "Nombre de usuario",
+    password: "Clave",
+    register:"Registro",
+    enter_user_name: "Por favor ingrese nombre de usuario",
+    enter_valid_user_name: "Porfavor ingrese un usuario valido",
+    enter_user_password: "Por favor, ingrese contraseña",
+    enter_valid_user_password: "Por favor ingrese una contraseña válida",
+    
+    //MPIN Configure Screen
+    enter_mpin:'Ingrese MPIN',
+    enter_confirm_mpin: 'Ingresar Confirmar MPIN',
+    save: 'Ahorrar',
+    enter_pin: 'Por favor ingrese MPIN',
+    enter_confirm_pin: 'Por favor ingrese confirmar MPIN',
+    pin_not_match: 'Pin y confirmar no coinciden.',
+    
+    //Login Screen
+    invalid_mpin: 'MPIN no válido',
+    login:'Acceso',
+    
+    //Dashboard
+    welcom_back: 'Bienvenido de nuevo',
+    last_login: 'Último acceso',
+    
+    //InvoiceCard Component
+    invoice_number: 'Número de factura:',
+    date: 'Fecha:',
+    name: 'Nombre:',
+    amount:'Monto:'
 };
 
 export {en,es};
