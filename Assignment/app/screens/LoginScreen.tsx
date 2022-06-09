@@ -14,6 +14,7 @@ import {useSelector} from 'react-redux';
 import {Mode} from '../Redux/ThemeReducer';
 import ThemeChange from '../componet/Dashboard/ThemeChange';
 import {switchMode} from '../redux/ThemeAction';
+import {hashingPassword} from '../utils/Hashing';
 
 const LoginScreen = ({navigation}: {navigation: any}) => {
   const dispatch = useDispatch();
@@ -51,12 +52,21 @@ const LoginScreen = ({navigation}: {navigation: any}) => {
       return;
     }
 
-    if (!validatePinAndConfirmPin(pin.current!, userInfo?.mpin!)) {
-      setError(translate('invalid_mpin'));
-      return;
-    }
-    setError(null);
-    navigation.push('Dashboard');
+    hashingPassword(
+      pin.current!,
+      password => {
+        if (!validatePinAndConfirmPin(password, userInfo?.mpin!)) {
+          setError(translate('invalid_mpin'));
+          return;
+        }
+        setError(null);
+        navigation.push('Dashboard');
+      },
+      error => {
+        setError(pinValidation);
+        return;
+      },
+    );
   };
 
   return (

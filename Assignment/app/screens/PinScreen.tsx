@@ -12,6 +12,7 @@ import {switchMode} from '../redux/ThemeAction';
 import {Mode} from '../Redux/ThemeReducer';
 import {AppColors_Dark, AppColors_Light} from '../utils/AppColors';
 import {setUserInfo} from '../utils/Database';
+import {hashingPassword} from '../utils/Hashing';
 import {
   validateConfirmPin,
   validatePin,
@@ -60,10 +61,18 @@ const PinScreen = ({navigation, route}: {navigation: any; route: any}) => {
       return;
     }
     setError(null);
-    userInfo.mpin = pin.current!;
-    setUserInfo(userInfo).then(() => {
-      navigation.push('LoginScreen');
-    });
+    hashingPassword(
+      pin.current!,
+      password => {
+        userInfo.mpin = password;
+        setUserInfo(userInfo).then(() => {
+          navigation.push('LoginScreen');
+        });
+      },
+      error => {
+        setError(translate('pin_not_match'));
+      },
+    );
   };
 
   return (

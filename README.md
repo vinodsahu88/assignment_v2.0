@@ -14,3 +14,14 @@ React-native developer assignment v2.0
 #Run on Android
 2 - 'npx react-native run-android' will run the app on simulater.
 
+
+#Brownie Points that done in assignment
+
+ Typescript 
+ Fetch invoices list stubbed response using Heroku, Mockable.io or similar platforms (Data fetching from Heroku)
+ Multilingual framework implementation for all the static labels and error messages  (Now supporting English and Spanish)
+ Dark / Light theme implementation with toggle button 
+ Atomic design pattern for component creation
+
+#Hash Algorith
+SHA-256 
